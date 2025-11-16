@@ -1,0 +1,138 @@
+@font-face {
+  font-family: "paintball";
+  src: url('../font/paintball_beta.otf');
+}
+@font-face {
+  font-family: "mario";
+  src: url('../font/super_mario_256.ttf');
+}
+
+body {
+	background-color:#00007f;
+	font-family:paintball;
+	text-align: center;
+	font-size: 25px;
+	color:orange;
+	margin:0px;
+}
+
+#liste{ 
+  width : 100%; 
+  height : 50 px;
+  font-size: 20px
+}
+
+h1	{
+	color: orange;
+	-webkit-text-stroke-width: 4px;
+	-webkit-text-stroke-color: black;
+	text-align:center;
+	font-size: 50px;
+	font-family:mario;
+}
+
+#right{
+	background-color:rgba(0, 255, 0, 0.55);
+	text-align: center;
+	font-size: 80px;
+	height:150px;
+}
+
+#wrong{
+	background-color:rgba(255, 0, 0, 0.664);
+	text-align: center;	
+	font-size: 80px;
+	height:150px;
+}
+
+.text	{
+    margin-left: 5%;
+    margin-right: 5%;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: black;
+}
+
+.text img {
+	-webkit-transform: scale(0.95);
+	transform: scale(0.95);
+	-webkit-transition: .1s ease-in-out;
+	transition: .1s ease-in-out;
+}
+
+.text :hover img {
+	-webkit-transform: scale(1.02);
+	transform: scale(1.02);
+}
+
+#space	{
+	height: 35px;
+}
+
+nav{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #6600CC;
+    position: sticky;
+    top: 0px;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li{
+    flex: 1 1 auto;
+    text-align: center;
+    position: relative;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid black;
+    padding: 10px 0px;
+}
+
+nav a:hover{
+    color: black;
+    border-bottom: 2px solid gold;
+}
+
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: #000000FF;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+nav > ul li:hover .sous{
+    display: flex;
+    flex-flow: column wrap;
+}
+.sous li{
+    flex: 1 1 auto;
+    text-align: left;
+}
+.sous a{
+    padding: 10px;
+    border-bottom: none;
+}
+.sous a:hover{
+    border-bottom: none;
+    background-color: #00000000;
+}
+.deroulant > a::after{
+    content:" ▼";
+    font-size: 12px;
+}
+
+.easter-egg{
+    position: fixed;
+    top: 45%;
+    right: 10%;
+    width: 200px;
+    height: 100px;
+}

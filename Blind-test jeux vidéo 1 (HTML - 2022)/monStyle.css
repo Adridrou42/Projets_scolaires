@@ -1,0 +1,48 @@
+body {
+	background-color:#000033;
+}
+#intro{
+  background-color:rgba(20, 16, 240, 0.46);
+  width:100%;
+  padding: 2px;
+  font-size:150%;
+  font-family: Georgia;
+  text-align: center;
+  color: white;
+  line-height: 50%;
+}
+#explain{
+  background-color:rgba(20, 16, 240, 0.46);
+  width:100%;
+  padding: 2px;
+  font-size:100%;
+  font-family: Georgia;
+  text-align: center;
+  color: white;
+  line-height: 50%;
+}
+#consigne{
+	font-size: 50%;
+	background-color:rgba(204,170,0, 0.8);
+	padding: 1px;
+}
+#right{
+	background-color:rgba(0, 255, 0, 0.40);
+	text-align: center;
+}
+#wrong{
+	background-color:rgba(255, 0, 0, 0.40);
+	text-align: center;	
+}
+h1	{
+	color:white;
+	text-align:center;
+	font-size: 350%;
+}
+h2	{
+	color:white;
+	text-align: center;
+	font-size: 150%;
+	font-family: Georgia;
+	line-height: 50%;
+}

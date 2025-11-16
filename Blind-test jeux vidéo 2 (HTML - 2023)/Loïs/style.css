@@ -1,0 +1,213 @@
+@font-face {
+  font-family: "paintball";
+  src: url('font/paintball_beta.otf');
+}
+
+@font-face {
+  font-family: "mario";
+  src: url('font/super_mario_256.ttf');
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Avenir, sans-serif;
+	 background-color:#F3C0B6; 
+	 font-size :25px;
+}
+.text	{
+	-webkit-text-stroke-width: 0.5px;
+	-webkit-text-stroke-color: black;
+	text-align : center;
+	height: 700px;
+}
+
+h1{ 
+text-align:center;
+font-family :paintball;
+}
+h2{ 
+text-align : center; 
+font-family : mario;
+}
+h3{ 
+text-align:center;
+font-family :paintball;
+
+}
+
+nav{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #F39583;
+    position: sticky;
+    top: 0px;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li{
+    flex: 1 1 auto;
+    text-align: center;
+    position: relative;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+
+nav a:hover{
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: #000000FF;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+nav > ul li:hover .sous{
+    display: flex;
+    flex-flow: column wrap;
+}
+.sous li{
+    flex: 1 1 auto;
+    text-align: left;
+}
+.sous a{
+    padding: 10px;
+    border-bottom: none;
+}
+.sous a:hover{
+    border-bottom: none;
+    background-color: #00000000;
+}
+.deroulant > a::after{
+    content:" ▼";
+    font-size: 12px;
+}
+
+.conteneur{
+  margin: 50px 20px;
+  height: 150px;
+  text-align: center; 
+}
+
+.body{ 
+  width : 100%; 
+  height : 50 px; 
+}
+
+.header{ 
+  width : 100%; 
+  height : 50 px;
+  margin-left:300px;
+  margin-right:30px;
+  margin-bottom:200px;
+}
+
+#footer{
+ display: block;
+ position: fixed;
+ bottom: 0px;
+ left: 0px;
+ width: 100%;
+ height: 180px;
+ /* z-index: 999;*/
+ padding-top: 10px; /*décalage du texte vers le bas*/
+ text-align: center;
+ text-indent: 0px; /*décalage du texte vers la droite*/
+ font-size: 18px;
+ color: #F39583;
+ background-color: #F39583;
+ }
+.footer{ display: block; position: fixed; bottom: 0px; left: 0px; width: 100%; height: 200px; background-color: #F39583;}
+
+ .header {
+ display: block;
+ position: fixed;
+ bottom: 0px;
+ left: 0px;
+ width: 100%;
+ height: 650px;
+ /* z-index: 999;*/
+ padding-top: 10px; /*décalage du texte vers le bas*/
+ text-align: left;
+ text-indent: 0px; /*décalage du texte vers la droite*/
+ font-size: 45px;
+ color: black;
+
+ }
+ .marquee-rtl {
+  max-width: 100%;                      /* largeur de la fenêtre */
+  border: 00px solid #F3C0B6;
+  overflow: hidden;                     /* masque tout ce qui dépasse */
+  box-shadow: 0 .25em .5em #CCC,inset 0 0 1em .25em #CCC;
+}
+.marquee-rtl > :first-child {
+  display: inline-block;                /* modèle de boîte en ligne */
+  padding-right: 100em;                   /* un peu d'espace pour la transition */
+  padding-left: 100%;                   /* placement à droite du conteneur */
+  white-space: nowrap;                  /* pas de passage à la ligne */
+  animation: defilement-rtl 5s infinite linear;
+}
+  animation-name: defilement-rtl{       /* référence à la règle @keyframes mise en oeuvre */
+  animation-duration: 15s;              /* valeur à ajuster suivant la longueur du message */
+  animation-iteration-count: infinite;  /* boucle continue */
+  animation-timing-function: linear;    /* pas vraiment utile ici */
+}
+@keyframes defilement-rtl {
+  0% {
+    transform: translate3d(-100%,0,0);      /* position initiale à droite */
+  }
+  100% {
+    transform: translate3d(0,0,0);  /* position finale à gauche */
+  }
+}
+
+.zoom img {
+	-webkit-transform: scale(0.95);
+	transform: scale(0.95);
+	-webkit-transition: .3s ease-in-out;
+	transition: .1s ease-in-out;
+}
+
+.zoom :hover img {
+	-webkit-transform: scale(1.02);
+	transform: scale(1.02);
+}
+
+.left { 
+	 position : fixed ; 
+	 top :70% ; 
+	 right : 100% ; 
+	 width: 100px;
+	 height: 100px;
+}
+..marquee-rtl2 {
+  max-width: 100%;                      /* largeur de la fenêtre */
+  border: 00px solid #F3C0B6;
+  overflow: hidden;                     /* masque tout ce qui dépasse */
+  box-shadow: 0 .25em .5em #CCC,inset 0 0 1em .25em #CCC;
+}
+.marquee-rtl2 > :first-child {
+  display: inline-block;                /* modèle de boîte en ligne */
+  padding-right: 100em;                   /* un peu d'espace pour la transition */
+  padding-left: 100%;                   /* placement à droite du conteneur */
+  white-space: nowrap;                  /* pas de passage à la ligne */
+  animation: defilement-rtl 10s infinite linear;
+}
+  animation-name: defilement-rtl{       /* référence à la règle @keyframes mise en oeuvre */
+  animation-duration: 3s;              /* valeur à ajuster suivant la longueur du message */
+  animation-iteration-count: infinite;  /* boucle continue */
+  animation-timing-function: linear;    /* pas vraiment utile ici */

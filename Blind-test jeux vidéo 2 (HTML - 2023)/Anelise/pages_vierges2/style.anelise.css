@@ -1,0 +1,194 @@
+.musique {
+    margin-right: 100%;
+}
+
+h1{
+    color: white;
+    font-size: xxx-large;
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+
+
+#bandeau {
+    text-align: center;
+}
+
+#musique {
+    text-align: center;
+}
+
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Avenir, sans-serif;
+    background-color: #EEE2DC;
+}
+
+
+nav{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #EDC7B7;
+    position: sticky;
+    top: 0px;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li{
+    flex: 1 1 auto;
+    text-align: center;
+    position: relative;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: EEAFDD;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+
+nav a:hover{
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px white;
+    background-color: #77D5CB;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+nav > ul li:hover .sous{
+    display: flex;
+    flex-flow: column wrap;
+}
+.sous li{
+    flex: 1 1 auto;
+    text-align: left;
+}
+.sous a{
+    padding: 10px;
+    border-bottom: none;
+}
+.sous a:hover{
+    border-bottom: none;
+    background-color: #77D5CB;
+}
+.deroulant > a::after{
+    content:" ▼";
+    font-size: 12px;
+}
+
+.conteneur {
+    text-align: center;
+    cursor: url("image.anelise/eclair3.png");
+}
+
+#right {
+    float:left;
+    width: 49%;
+   
+}
+
+#left {
+    float:right;
+    text-align: right;
+    width: 49%;
+    
+}
+
+img {
+    border-radius: 7px;
+}
+
+.zoom img {
+	-webkit-transform: scale(0.95);
+	transform: scale(0.95);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.zoom :hover img {
+	-webkit-transform: scale(1.02);
+	transform: scale(1.02);
+    cursor: url("images/eclair2.png"), pointer;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    
+}
+
+.bravo1 {
+    text-align: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+}
+
+h3{
+    color: white;
+    font-size: x-large;
+    text-align: center;
+    
+}
+
+
+
+#body2{
+    margin: 0px;
+    padding: 0px;
+    font-family: Avenir, sans-serif;
+}
+
+
+h4{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+h5{
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+#synopsis {
+    height: 300px;
+    width: 700px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 20px;
+
+}
+
+
+html,body  { overflow:hidden; } 
