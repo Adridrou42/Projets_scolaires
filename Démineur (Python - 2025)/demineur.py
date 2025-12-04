@@ -79,6 +79,7 @@ taille = [16,30]
 compteur = 0
 clic = False
 en_jeu = True
+couleur = [(0, 66, 255),(6, 232, 0),(255, 21, 0),(48, 0, 214),(110, 42, 0),(255, 247, 0),(0, 255, 249),(255, 0, 0)]
 
 initialiser_tableau()
 
@@ -97,7 +98,7 @@ while True:
             if tableau[y][x] > 0:
                 pygame.draw.rect(ecran, (200,200,200), pygame.Rect(x*20, y*20, 19, 19))
                 font = pygame.font.Font(None, 24)
-                text = font.render(str(tableau[y][x]), True, (0, 0, 255))
+                text = font.render(str(tableau[y][x]), True, couleur[tableau[y][x]-1])
                 ecran.blit(text, (x*20+5, y*20+2))
             if tableau[y][x] == 0:
                 pygame.draw.rect(ecran, (200,200,200), pygame.Rect(x*20, y*20, 19, 19))
