@@ -6,29 +6,34 @@ import sys
 
 # ========== Fonctions ==========
 def initialiser_tableau():
-    global tableau, compteur, en_jeu
+    global tableau, compteur, en_jeu, mines
     tableau = [[-1]*30 for i in range(16)]
-    compteur = 0
+    mines = 0
     # Insertion aléatoire des 99 mines
-    while compteur != 99:
+    while mines != 99:
         pos = [random.randint(0,29),random.randint(0,15)]
         if tableau[pos[1]][pos[0]] == -1:
             tableau[pos[1]][pos[0]] = -2
-            compteur += 1
-    compteur = 30 * 16 - 99 # Cases non minées
+            mines += 1
+    compteur = 30 * 16 - mines # Cases non minées
     print("Tableau initialisé.")
     en_jeu = True
 
 
 def pos_drapeau(x, y):
+    global mines
     if tableau[y][x] == -1:
         tableau[y][x] = -3
+        mines -= 1
     elif tableau[y][x] == -3:
         tableau[y][x] = -1
+        mines += 1
     elif tableau[y][x] == -2:
         tableau[y][x] = -4
+        mines -= 1
     elif tableau[y][x] == -4:
         tableau[y][x] = -2
+        mines += 1
          
 
 def afficher_case(pos_x, pos_y):
@@ -66,7 +71,7 @@ def afficher_case(pos_x, pos_y):
 # ========== Initialisation ==========
 pygame.init()
 # Définition de la taille de la fenêtre
-ecran = pygame.display.set_mode((20*30, 20*16))
+ecran = pygame.display.set_mode((20*30, 20*17))
 pygame.display.set_caption("Démineur")
 
 # Horloge pour contrôler le taux de rafraîchissement
@@ -76,16 +81,18 @@ FPS = 60
 # Initialisation des variables
 tableau = [[-1]*30 for i in range(16)]
 taille = [16,30]
+mines = 0
 compteur = 0
 clic = False
 en_jeu = True
-couleur = [(0, 66, 255),(6, 232, 0),(255, 21, 0),(48, 0, 214),(110, 42, 0),(255, 247, 0),(0, 255, 249),(255, 0, 0)]
+couleur = [(0, 66, 255),(6, 150, 0),(255, 21, 0),(48, 0, 214),(110, 42, 0),(255, 247, 0),(0, 255, 249),(255, 0, 0)]
 
 initialiser_tableau()
 
 # ========== Boucle principale ==========
 while True:
     # --- Affichage ---
+    pygame.draw.rect(ecran, (0,0,0), pygame.Rect(0, 0, 20*30, 20*17))
     for y in range(taille[0]):
         for x in range(taille[1]):
             if tableau[y][x] <= 0:
@@ -103,15 +110,20 @@ while True:
             if tableau[y][x] == 0:
                 pygame.draw.rect(ecran, (200,200,200), pygame.Rect(x*20, y*20, 19, 19))
 
+    
+    font = pygame.font.SysFont('Georgia', 20)
+    text = font.render(str(mines), True, (255, 0, 0))
+    ecran.blit(text, (290, 316))
+
     if compteur == 0 and en_jeu:
         en_jeu = False
     if not en_jeu:
-        font = pygame.font.Font(None, 48)
+        font = pygame.font.SysFont('Georgia', 20)
         if compteur == 0:
             text = font.render("Gagné !", True, (0, 255, 0))
         else:
             text = font.render("Perdu !", True, (255, 0, 0))
-        ecran.blit(text, (200, 150))
+        ecran.blit(text, (0, 318))
 
 
     # --- Gestion des événements ---
